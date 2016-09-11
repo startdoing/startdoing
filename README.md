@@ -14,18 +14,21 @@ documentation](https://github.com/startdoing/startdoing/wiki) to read more
 about the usage, architecture etc.,
 
 
-## Development
+## Backend Development
 
-If you are interested to contribute to this project, please follow the
+If you are interested to contribute to backend of this project, please follow the
 instruction given here.
 
 1. Install [Go
-compiler](http://muthukadan.net/golang/an-introduction-to-go-programming.html)
-2. Run this command to get source code: `go get github.com/startdoing/startdoing`
-   ([Git](http://git-scm.com/) is a prerequisite)
+   compiler](http://muthukadan.net/golang/an-introduction-to-go-programming.html)
+
+2. Run this command to get source code: `go get
+   github.com/startdoing/startdoing` ([Git](http://git-scm.com/) is a
+   prerequisite)
+
+3. Install [glide](https://glide.sh) and run: `glide install`
 
 The code will be available under `$GOPATH/src/github.com/startdoing/startdoing`
-You will also a get an executable binary under `$GOPATH/bin/startdoing`.
 
 You can fork the project from
 [Github](https://github.com/startdoing/startdoing) and push your
@@ -44,6 +47,41 @@ to install it run these two commands:
 Before commiting your changes, run gometalinter like this:
 
     gometalinter ./...
+
+To run the backend for development, install [refresh](https://github.com/baijum/refresh):
+
+    go get -u github.com/baijum/refresh
+
+Now you can run the `refresh` command to automatically refresh the
+server whenever there is a change in code:
+
+    refresh
+
+The backend will be listening on `8080` port.
+
+## Frontend Development
+
+If you are interested to contribute to frontend of this project, first
+you need to setup the backend as explained above.  After that please
+follow the instruction given here.
+
+1. Install [node.js](https://nodejs.org/en) followed by
+   [ember-cli](https://ember-cli.com): `npm install -g
+   ember-cli@2.8.0`
+
+2. Install bower: `npm install -g bower`
+
+3. Install phantomjs: `npm install -g phantomjs-prebuilt`
+
+4. Install [watchman](https://facebook.github.io/watchman)
+
+5. Change to `web` directory and run: `npm install` and `bower
+   install`
+
+Now you can run `ember server` within the `web` directory to
+automatically refresh the frontend whenever there is a change in code.
+
+The fronten will be available on `4200` port.
 
 ## License
 
